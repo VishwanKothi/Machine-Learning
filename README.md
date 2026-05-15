@@ -6,13 +6,13 @@ This repository contains three notebook-based experiments for federated learning
 
 | File | Description |
 | --- | --- |
-| `Task_1.ipynb` | Baseline federated learning experiment on MNIST with 50 non-IID clients, 100 rounds, 10 clients per round, and greedy/DivFL vs Shapley-style/S-FedAvg client selection. |
-| `Task_2.ipynb` | TensorFlow/scikit-learn drift experiment with resumable checkpoints. Runs phase-based label and feature drift using `simple_cnn`, `lenet`, `logreg`, `svm`, and `rf`. |
-| `Task_3.ipynb` | PyTorch non-IID federated learning experiment using Random selection vs Sliding-Window Shapley UCB (SW-ShUCB). |
+| `Task-1.ipynb` | Baseline federated learning experiment on MNIST with 50 non-IID clients, 100 rounds, 10 clients per round, and greedy/DivFL vs Shapley-style/S-FedAvg client selection. |
+| `Task-2.ipynb` | TensorFlow/scikit-learn drift experiment with resumable checkpoints. Runs phase-based label and feature drift using `simple_cnn`, `lenet`, `logreg`, `svm`, and `rf`. |
+| `Task-3.ipynb` | PyTorch non-IID federated learning experiment using Random selection vs Sliding-Window Shapley UCB (SW-ShUCB). |
 | `federated_learning_task2_checkpoints.zip` | Saved Task 2 result/checkpoint folder. |
 | `SW_ShUCB_nonIID_checkpoints.zip` | Saved Task 3 result/checkpoint folder, including results and plots. |
 | `Federated_Learning_ppt.pdf` | Presentation slides for the project. |
-|`Federated_Learning_report.pdf` | Complete project report containing methodology, experimental setup, architectures, results, and analysis for all tasks. |
+| `Federated_Learning_report.pdf` | Complete project report containing methodology, experimental setup, architectures, results, and analysis for all tasks. |
 
 ## Environment
 
@@ -28,12 +28,31 @@ If you use a GPU locally, install the PyTorch build that matches your CUDA setup
 
 ## Running In Google Colab
 
-1. Upload the notebooks and zip files to Google Drive.
-2. Unzip the saved results into these Drive folders:
+1. Upload the notebooks and zip files to Google Drive (root of `My Drive`).
+2. Unzip the saved results inside Colab by running the following cell **before** opening any task notebook:
+
+```python
+from google.colab import drive
+drive.mount("/content/drive")
+
+import zipfile
+
+# Task 2
+with zipfile.ZipFile("/content/drive/MyDrive/federated_learning_task2_checkpoints.zip", "r") as z:
+    z.extractall("/content/drive/MyDrive/")
+print("Task 2 checkpoints extracted.")
+
+# Task 3
+with zipfile.ZipFile("/content/drive/MyDrive/SW_ShUCB_nonIID_checkpoints.zip", "r") as z:
+    z.extractall("/content/drive/MyDrive/")
+print("Task 3 checkpoints extracted.")
+```
+
+After extraction, the following folders must exist in your Drive:
 
 ```text
-MyDrive/federated_learning_task2_checkpoints
-MyDrive/SW_ShUCB_nonIID_checkpoints
+MyDrive/federated_learning_task2_checkpoints/
+MyDrive/SW_ShUCB_nonIID_checkpoints/
 ```
 
 3. Open each notebook in Colab.
@@ -74,7 +93,7 @@ If the archive already contains the top-level folder, unzip it into the project 
 
 ### Task 1
 
-Run `Task_1.ipynb` to reproduce the baseline comparison. It uses TensorFlow/Keras for CNN models and scikit-learn for classical models. The main settings are:
+Run `Task-1.ipynb` to reproduce the baseline comparison. It uses TensorFlow/Keras for CNN models and scikit-learn for classical models. The main settings are:
 
 - `N_CLIENTS = 50`
 - `CLIENTS_PER_ROUND = 10`
@@ -85,7 +104,7 @@ Run `Task_1.ipynb` to reproduce the baseline comparison. It uses TensorFlow/Kera
 
 ### Task 2
 
-Run `Task_2.ipynb` for concept drift experiments. It saves and resumes from:
+Run `Task-2.ipynb` for concept drift experiments. It saves and resumes from:
 
 ```text
 /content/drive/MyDrive/federated_learning_task2_checkpoints
@@ -106,7 +125,7 @@ Task 2 writes per-experiment histories, model checkpoints, `task2_results.pkl`, 
 
 ### Task 3
 
-Run `Task_3.ipynb` for the SW-ShUCB non-IID experiment. It uses PyTorch and torchvision, partitions MNIST across 100 clients, and compares Random selection against SW-ShUCB.
+Run `Task-3.ipynb` for the SW-ShUCB non-IID experiment. It uses PyTorch and torchvision, partitions MNIST across 100 clients, and compares Random selection against SW-ShUCB.
 
 Main settings:
 
@@ -150,8 +169,8 @@ The notebooks set random seeds internally. Results can still vary slightly depen
 
 5. W. Chen, L. Wang, H. Zhao, and K. Zheng,  
    *Combinatorial Semi-Bandit in the Non-Stationary Environment*,  
-   Proceedings of UAI, 2021. :contentReference[oaicite:2]{index=2}
+   Proceedings of UAI, 2021.
 
 ## Acknowledgements
 
-We sincerely thank **Ms. Shradha Sharma** for her continuous guidance, valuable insights, and support throughout the development of this project. Her suggestions and feedback greatly helped in shaping the experimental design, analysis, and overall presentation of this work. :contentReference[oaicite:1]{index=1}
+We sincerely thank **Ms. Shradha Sharma** for her continuous guidance, valuable insights, and support throughout the development of this project. Her suggestions and feedback greatly helped in shaping the experimental design, analysis, and overall presentation of this work.
