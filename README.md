@@ -151,6 +151,8 @@ The notebooks set random seeds internally. Results can still vary slightly depen
 
 ## References
 
+## References
+
 1. B. McMahan, E. Moore, D. Ramage, S. Hampson, and B. A. y Arcas,  
    *Communication-Efficient Learning of Deep Networks from Decentralized Data*,  
    Proceedings of AISTATS, 2017.
@@ -167,7 +169,15 @@ The notebooks set random seeds internally. Results can still vary slightly depen
    *Federated Learning under Distributed Concept Drift*,  
    Proceedings of AISTATS, 2023.
 
-5. W. Chen, L. Wang, H. Zhao, and K. Zheng,  
+5. S. Guan, Y. Zhou, S. Ding, and S. Ji,  
+   *FLASH: Concept Drift Adaptation in Federated Learning*,  
+   Proceedings of ICML, 2023.
+
+6. J. Kang, Z. Xiong, D. Niyato, H. Yu, and Y. Zhang,  
+   *FedNN: Federated Learning on Concept Drift Data using Weight and Group Normalization*,  
+   arXiv preprint arXiv:2409.11973, 2024.
+
+7. W. Chen, L. Wang, H. Zhao, and K. Zheng,  
    *Combinatorial Semi-Bandit in the Non-Stationary Environment*,  
    Proceedings of UAI, 2021.
 
