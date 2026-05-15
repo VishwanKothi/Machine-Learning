@@ -151,8 +151,6 @@ The notebooks set random seeds internally. Results can still vary slightly depen
 
 ## References
 
-## References
-
 1. B. McMahan, E. Moore, D. Ramage, S. Hampson, and B. A. y Arcas,  
    *Communication-Efficient Learning of Deep Networks from Decentralized Data*,  
    Proceedings of AISTATS, 2017.
