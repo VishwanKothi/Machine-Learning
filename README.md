@@ -12,6 +12,7 @@ This repository contains three notebook-based experiments for federated learning
 | `federated_learning_task2_checkpoints.zip` | Saved Task 2 result/checkpoint folder. |
 | `SW_ShUCB_nonIID_checkpoints.zip` | Saved Task 3 result/checkpoint folder, including results and plots. |
 | `Federated_Learning_ppt.pdf` | Presentation slides for the project. |
+|`Federated_Learning_report.pdf` | Complete project report containing methodology, experimental setup, architectures, results, and analysis for all tasks. |
 
 ## Environment
 
@@ -128,3 +129,29 @@ SW_ShUCB_nonIID_checkpoints/
 ## Reproducibility
 
 The notebooks set random seeds internally. Results can still vary slightly depending on hardware, TensorFlow/PyTorch versions, and whether the run uses CPU or GPU.
+
+## References
+
+1. B. McMahan, E. Moore, D. Ramage, S. Hampson, and B. A. y Arcas,  
+   *Communication-Efficient Learning of Deep Networks from Decentralized Data*,  
+   Proceedings of AISTATS, 2017.
+
+2. R. Balakrishnan, T. Li, T. Zhou, N. Himayat, V. Smith, and J. Bilmes,  
+   *Diverse Client Selection for Federated Learning via Submodular Maximization*,  
+   Proceedings of ICLR, 2022.
+
+3. L. Nagalapatti and R. Narayanam,  
+   *Game of Gradients: Mitigating Irrelevant Clients in Federated Learning*,  
+   Proceedings of AAAI, 2021.
+
+4. E. Jothimurugesan, K. Hsieh, J. Wang, G. Joshi, and P. B. Gibbons,  
+   *Federated Learning under Distributed Concept Drift*,  
+   Proceedings of AISTATS, 2023.
+
+5. W. Chen, L. Wang, H. Zhao, and K. Zheng,  
+   *Combinatorial Semi-Bandit in the Non-Stationary Environment*,  
+   Proceedings of UAI, 2021. :contentReference[oaicite:2]{index=2}
+
+## Acknowledgements
+
+We sincerely thank **Ms. Shradha Sharma** for her continuous guidance, valuable insights, and support throughout the development of this project. Her suggestions and feedback greatly helped in shaping the experimental design, analysis, and overall presentation of this work. :contentReference[oaicite:1]{index=1}
